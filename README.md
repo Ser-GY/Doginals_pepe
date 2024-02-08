@@ -4,41 +4,34 @@ A minter and protocol for inscriptions on Dogecoin.
 
 ## ⚠️⚠️⚠️ Important ⚠️⚠️⚠️
 
-Use this wallet for inscribing only! Always inscribe from this wallet to a different address, e.g. one you created with Woof Wallet. This wallet is not meant for storing funds or inscriptions.
+Use this wallet for inscribing only! Always inscribe from this wallet to a different address, e.g. one you created with DogeLabs or Doggy Market. This wallet is not meant for storing funds or inscriptions.
 
 ## Prerequisites
 
-To use this, you'll need to use your console/terminal and install Node.js on your computer. So please ensure, that you have your 
+This guide requires a bit of coding knowledge and running Ubuntu on your local machine or a rented one. To use this, you'll need to use your terminal to setup a Dogecoin node, clone this repo and install Node.js on your computer.
+
+### Setup Dogceoin node
+
+Follow the instructions here to setup and sync your Dogecoin node: https://dogecoin.com/dogepedia/how-tos/operating-a-node/#linux-instructions
 
 ### Install NodeJS
 
-Please head over to [https://nodejs.org/en/download](https://nodejs.org/en/download) and follow the installation instructions.
+Please head over to (https://github.com/nodesource/distributions#using-ubuntu and follow the installation instructions.
 
-### Launch your own RPC 
-
-In order to inscribe, you will need to have access to a Dodgecoin RPC. For example: [https://getblock.io/](https://getblock.io/) provides a service to get access to an RPC.
-You will need that for the configuration.
-
-## Setup
+## Setup Minter
 
 ### git clone and install
 
 Install by git clone (requires git and node on your computer) 
 
-#### git clone
+#### Clone the repo
 ```
-git clone https://github.com/verydogelabs/inscription-wallet.git
+git clone https://github.com/zachzwei/Doginals_z4ch.git
 ```
-
-**or** 
-
-download this [zip file](https://github.com/verydogelabs/inscription-wallet/archive/refs/heads/main.zip) and upack in a directory.
-
-Now open your terminal and change to the directory the sources are installed.
-####
+#### Instell dependencies
 
 ```
-cd <path to your download / installation>
+cd Doginals_z4ch
 npm install
 ``` 
 
@@ -46,18 +39,26 @@ After all dependencies are solved, you can configure the environment:
 
 ### Configure environment
 
-Copy a `.env.example` to `.env` and add your node information:
+Create a `.env` file with your node information. Set your own username/password.
 
 ```
-NODE_RPC_URL=http://<ip>:<port>
-# This is optional if you have an RPC from getblock.io
-NODE_RPC_USER=<username>
-NODE_RPC_PASS=<password>
+NODE_RPC_URL=http://127.0.0.1:22555/
+NODE_RPC_USER=ape
+NODE_RPC_PASS=zord
 TESTNET=false
 FEE_PER_KB=500000000
 ```
-
 You can get the current fee per kb from [here](https://blockchair.com/).
+
+Create a `dogecoin.conf` at `/root/.dogecoin` folder. Set your own username/password.
+
+```
+rpcuser=ape
+rpcpassword=zord
+rpcport=22555
+server=1
+listen=1
+```
 
 ## Funding
 
