@@ -12,11 +12,11 @@ This guide requires a bit of coding knowledge and running Ubuntu on your local m
 
 ### Setup Dogceoin node
 
-Follow the instructions here to setup and sync your Dogecoin node: https://dogecoin.com/dogepedia/how-tos/operating-a-node/#linux-instructions
+Follow the instructions here to setup and sync your Dogecoin node: (https://dogecoin.com/dogepedia/how-tos/operating-a-node/#linux-instructions)
 
 ### Install NodeJS
 
-Please head over to (https://github.com/nodesource/distributions#using-ubuntu and follow the installation instructions.
+Please head over to (https://github.com/nodesource/distributions#using-ubuntu) and follow the installation instructions.
 
 ## Setup Minter
 
