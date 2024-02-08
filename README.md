@@ -83,7 +83,7 @@ After all dependencies are solved, you can configure the environment:
 
 ### Configure environment
 
-Create a `.env` file with your node information. Set your own username/password.
+Create a `.env` file in the Doginals_z4ch directory with your node information. Set your own username/password. Keep the rest as is.
 
 ```
 NODE_RPC_URL=http://127.0.0.1:22555/
@@ -94,7 +94,7 @@ FEE_PER_KB=500000000
 ```
 You can get the current fee per kb from [here](https://blockchair.com/).
 
-Create a `dogecoin.conf` at `/root/.dogecoin` folder. Set your own username/password.
+Create a `dogecoin.conf` at `/root/.dogecoin` folder. Set your own username/password the same as the .env file. Keep the rest as is.
 
 ```
 rpcuser=ape
