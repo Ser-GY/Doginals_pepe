@@ -14,6 +14,50 @@ This guide requires a bit of coding knowledge and running Ubuntu on your local m
 
 Follow the instructions here to setup and sync your Dogecoin node: (https://dogecoin.com/dogepedia/how-tos/operating-a-node/#linux-instructions)
 
+From root directory:
+
+Download the latest Linux build from the Dogecoin Github repository:
+```
+wget https://github.com/dogecoin/dogecoin/releases/download/v1.14.6/dogecoin-1.14.6-x86_64-linux-gnu.tar.gz
+``` 
+
+Untar and unzip the package you just downloaded
+```
+tar -xvzf dogecoin-1.14.6-x86_64-linux-gnu.tar.gz
+```
+
+Enter into the bin directory inside the directory where Dogecoin Core has been untarred:
+```
+cd dogecoin-1.14.6/bin
+```
+
+Start the headless Dogecoin Daemon process:
+```
+./dogecoind -daemon
+```
+
+The Dogecoin Daemon is now starting.
+
+You can now use the dogecoin-cli tool to interact with Dogecoin Core’s JSON-RPC interface. Use the help command for a list of all available commands.
+```
+shibetoshi:~$ dogecoin-cli help
+```
+
+To get help on a specific command:
+```
+shibetoshi:~ dogecoin-cli help getblock 
+```
+
+You can follow the synching process by reading the contents of the debug.log file contained in the data directory. Go into the data directory, and type the following command:
+```
+shibetoshi:~$ tail -f debug.log
+```
+
+In most setups, you can stop “listening” to the output of the debug.log file by pressing CTRL+C
+
+For more information on using Dogecoin CLI refer to the Dogecoin CLI section. Additional configuration settings can be found in the Advanced Configuration section. For example, if you are not using Dogecoin Core as a wallet, it might be a good idea to disable the wallet functionality altogether.
+
+
 ### Install NodeJS
 
 Please head over to (https://github.com/nodesource/distributions#using-ubuntu) and follow the installation instructions.
