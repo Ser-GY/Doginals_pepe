@@ -40,17 +40,17 @@ The Dogecoin Daemon is now starting.
 
 You can now use the dogecoin-cli tool to interact with Dogecoin Core’s JSON-RPC interface. Use the help command for a list of all available commands.
 ```
-shibetoshi:~$ dogecoin-cli help
+dogecoin-cli help
 ```
 
 To get help on a specific command:
 ```
-shibetoshi:~ dogecoin-cli help getblock 
+dogecoin-cli help getblock 
 ```
 
-You can follow the synching process by reading the contents of the debug.log file contained in the data directory. Go into the data directory, and type the following command:
+You can follow the synching process by reading the contents of the debug.log file contained in the data directory. Go into the data directory of .dogecoin in root, and type the following command:
 ```
-shibetoshi:~$ tail -f debug.log
+tail -f debug.log
 ```
 
 In most setups, you can stop “listening” to the output of the debug.log file by pressing CTRL+C
