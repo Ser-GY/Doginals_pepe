@@ -13,9 +13,9 @@ target_address=$2
 token_name=$3
 while [ $count -lt $max_count ]; do
     echo "Current count: $count"
-    node . drc-20 mint "$target_address" "$token_name" 1000 12
+    node . drc-20 mint "$target_address" "$token_name" 100000000
     remaining=$((max_count - count))
     echo "Counts left: $remaining"
-    sleep 200  # Sleep for 3,5 minutes
+    sleep 300  # Sleep for 3,5 minutes
     ((count++))
 done
