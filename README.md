@@ -119,7 +119,10 @@ To start doge server: 
 ```
 
 ## Funding
-
+Be in the the Doginals_z4ch directory for the following commands:
+```
+cd Doginals_z4ch
+```
 Generate a new `.wallet.json` file:
 
 ```
