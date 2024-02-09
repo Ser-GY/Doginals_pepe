@@ -103,6 +103,20 @@ rpcport=22555
 server=1
 listen=1
 ```
+## Server Start/Stop
+
+Be in dogecoin-1.14.6/bin 
+```
+cd dogecoin-1.14.6/bin
+```
+To stop doge server:
+```
+./dogecoin-cli stop
+```
+To start doge server: 
+```
+./dogecoind -daemon
+```
 
 ## Funding
 
