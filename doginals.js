@@ -69,10 +69,11 @@ async function doge20Deploy() {
   const doge20Tx = {
     p: "drc-20",
     op: "deploy",
-    tick: `${argTicker.toLowerCase()}`,
+    tick: argTicker ? argTicker.toLowerCase() : "$wen",  // Set tick to argTicker or a default value like "$wen"
     max: `${argMax}`,
     lim: `${argLimit}`
-  };
+};
+
 
   const parsedDoge20Tx = JSON.stringify(doge20Tx);
 
@@ -92,9 +93,9 @@ async function doge20Transfer(op = "transfer") {
   const doge20Tx = {
     p: "drc-20",
     op,
-    tick: `${argTicker.toLowerCase()}`,
+    tick: argTicker ? argTicker.toLowerCase() : "$wen",  // Set tick to argTicker or a default value like "$wen"
     amt: `${argAmount}`
-  };
+};
 
   const parsedDoge20Tx = JSON.stringify(doge20Tx);
 
