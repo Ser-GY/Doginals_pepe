@@ -62,7 +62,7 @@ async function doge20() {
 
 async function doge20Deploy() {
     const argAddress = process.argv[3];
-    const argTicker = process.argv[4]; // Do not default
+    const argTicker = process.argv.slice(4).join(' '); // Do not default
     const argMax = process.argv[5];
     const argLimit = process.argv[6];
 
@@ -89,7 +89,7 @@ async function doge20Deploy() {
 
 async function doge20Transfer(op = "transfer") {
     const argAddress = process.argv[3];
-    const argTicker = process.argv[4]; // Do not default
+    const argTicker = process.argv.slice(4).join(' '); // Do not default
     const argAmount = process.argv[5];
     const argRepeat = Number(process.argv[6]) || 1;
 
