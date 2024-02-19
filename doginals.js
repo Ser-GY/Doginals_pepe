@@ -24,27 +24,51 @@ if (process.env.FEE_PER_KB) {
 const WALLET_PATH = process.env.WALLET || '.wallet.json'
 
 async function main() {
-    let cmd = process.argv[2]
+    let cmd = process.argv[2];
 
     if (fs.existsSync('pending-txs.json')) {
-        console.log('found pending-txs.json. rebroadcasting...')
-        const txs = JSON.parse(fs.readFileSync('pending-txs.json'))
-        await broadcastAll(txs.map(tx => new Transaction(tx)), false)
-        return
+        console.log('found pending-txs.json. rebroadcasting...');
+        const txs = JSON.parse(fs.readFileSync('pending-txs.json'));
+        await broadcastAll(txs.map(tx => new Transaction(tx)), false);
+        return;
     }
 
     if (cmd == 'mint') {
-        await mint()
+        await mint();
     } else if (cmd == 'wallet') {
-        await wallet()
+        await wallet();
     } else if (cmd == 'server') {
-        await server()
+        await server();
     } else if (cmd == 'drc-20') {
-        await doge20()
+        await doge20();
+    } else if (cmd == 'bulk-mint') { // Added to accomodate the new bulkMint function below
+        await bulkMint();
     } else {
-        throw new Error(`unknown command: ${cmd}`)
+        throw new Error(`unknown command: ${cmd}`);
     }
 }
+// This is added code GPT suggested. This code modification adds a new bulkMint function and 
+// updates the main function to handle the 'bulk-mint' command. The bulkMint function mints 
+// tokens twice with a delay between each minting.
+
+async function bulkMint() {
+    const argAddress = process.argv[3];
+    const argTicker = process.argv[4];
+    const argAmount = process.argv[5];
+
+    const wallet = JSON.parse(fs.readFileSync(WALLET_PATH));
+    const txs = [];
+
+    for (let i = 0; i < 2; i++) { // Adjust the loop count as needed
+        console.log(`Minting drc-20 tokens: ${i + 1} of 2`);
+        const tx = await mint(argAddress, "text/plain;charset=utf-8", argTicker, argAmount);
+        txs.push(tx);
+        await new Promise(resolve => setTimeout(resolve, 90000)); // Adjust the interval as needed
+    }
+
+    await broadcastAll(txs, false);
+}
+
 
 async function doge20() {
   let subcmd = process.argv[3]
