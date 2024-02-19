@@ -61,52 +61,60 @@ async function doge20() {
 }
 
 async function doge20Deploy() {
-  const argAddress = process.argv[4]
-  const argTicker = process.argv[5]
-  const argMax = process.argv[6]
-  const argLimit = process.argv[7]
+    const argAddress = process.argv[3];
+    const argTicker = process.argv[4]; // Do not default
+    const argMax = process.argv[5];
+    const argLimit = process.argv[6];
 
-  const doge20Tx = {
-    p: "drc-20",
-    op: "deploy",
-    tick: argTicker ? argTicker.toLowerCase() : "$wen",  // Set tick to argTicker or a default value like "$wen"
-    max: `${argMax}`,
-    lim: `${argLimit}`
-};
+    if (!argTicker) {
+        throw new Error("Ticker symbol is required.");
+    }
 
+    const doge20Tx = {
+        p: "drc-20",
+        op: "deploy",
+        tick: argTicker,
+        max: `${argMax}`,
+        lim: `${argLimit}`
+    };
 
-  const parsedDoge20Tx = JSON.stringify(doge20Tx);
+    const parsedDoge20Tx = JSON.stringify(doge20Tx);
 
-  // encode the doge20Tx as hex string
-  const encodedDoge20Tx = Buffer.from(parsedDoge20Tx).toString('hex');
+    // encode the doge20Tx as hex string
+    const encodedDoge20Tx = Buffer.from(parsedDoge20Tx).toString('hex');
 
-  console.log("Deploying drc-20 token...");
-  await mint(argAddress, "text/plain;charset=utf-8", encodedDoge20Tx);
+    console.log("Deploying drc-20 token...");
+    await mint(argAddress, "text/plain;charset=utf-8", encodedDoge20Tx);
 }
 
 async function doge20Transfer(op = "transfer") {
-  const argAddress = process.argv[4]
-  const argTicker = process.argv[5]
-  const argAmount = process.argv[6]
-  const argRepeat = Number(process.argv[7]) || 1;
+    const argAddress = process.argv[3];
+    const argTicker = process.argv[4]; // Do not default
+    const argAmount = process.argv[5];
+    const argRepeat = Number(process.argv[6]) || 1;
 
-  const doge20Tx = {
-    p: "drc-20",
-    op,
-    tick: argTicker ? argTicker.toLowerCase() : "$wen",  // Set tick to argTicker or a default value like "$wen"
-    amt: `${argAmount}`
-};
+    if (!argTicker) {
+        throw new Error("Ticker symbol is required.");
+    }
 
-  const parsedDoge20Tx = JSON.stringify(doge20Tx);
+    const doge20Tx = {
+        p: "drc-20",
+        op,
+        tick: argTicker,
+        amt: `${argAmount}`
+    };
 
-  // encode the doge20Tx as hex string
-  const encodedDoge20Tx = Buffer.from(parsedDoge20Tx).toString('hex');
+    const parsedDoge20Tx = JSON.stringify(doge20Tx);
 
-  for (let i = 0; i < argRepeat; i++) {
-    console.log("Minting drc-20 token...", i + 1, "of", argRepeat, "times");
-    await mint(argAddress, "text/plain;charset=utf-8", encodedDoge20Tx);
-  }
+    // encode the doge20Tx as hex string
+    const encodedDoge20Tx = Buffer.from(parsedDoge20Tx).toString('hex');
+
+    for (let i = 0; i < argRepeat; i++) {
+        console.log("Minting drc-20 token...", i + 1, "of", argRepeat, "times");
+        await mint(argAddress, "text/plain;charset=utf-8", encodedDoge20Tx);
+    }
 }
+
 
 async function wallet() {
     let subcmd = process.argv[3]
