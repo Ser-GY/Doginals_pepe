@@ -90,7 +90,7 @@ NODE_RPC_URL=http://127.0.0.1:22555/
 NODE_RPC_USER=ape
 NODE_RPC_PASS=zord
 TESTNET=false
-FEE_PER_KB=500000000
+FEE_PER_KB=37000000
 ```
 You can get the current fee per kb from [here](https://blockchair.com/).
 
