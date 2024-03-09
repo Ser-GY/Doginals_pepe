@@ -28,7 +28,7 @@ tar -xvzf dogecoin-1.14.6-x86_64-linux-gnu.tar.gz
 
 Enter into the bin directory inside the directory where Dogecoin Core has been untarred:
 ```
-cd dogecoin-1.14.6/bin
+cd dogecoin-1.14.7/bin
 ```
 
 Start the headless Dogecoin Daemon process:
