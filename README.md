@@ -118,9 +118,9 @@ txidex=1
 
 ## Server Start/Stop
 
-Be in dogecoin-1.14.6/bin 
+Be in dogecoin-1.14.7/bin 
 ```
-cd dogecoin-1.14.6/bin
+cd dogecoin-1.14.7/bin
 ```
 To stop doge server:
 ```
