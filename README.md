@@ -159,6 +159,14 @@ When you are done minting, send the funds back:
 ```
 node . wallet send <address> <optional amount>
 ```
+Be in dogecoin-1.14.7/bin 
+```
+cd dogecoin-1.14.7/bin
+```
+Check UTXO Balance
+```
+./dogecoin-cli listunspent
+```
 
 ## Minting
 
