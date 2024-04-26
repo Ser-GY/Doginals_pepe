@@ -307,34 +307,34 @@ The miner fee is too low. You can increase it up by putting FEE_PER_KB=300000000
 
 First copy a working minter directory (dir) to a new dir. Do this from the working dir where Doginals.js exists.
 
-'''
+```
 cp -r "current_dir_name" "new_dir_name"
-'''
+```
 Enter the new dir
-'''
+```
 cd "new_dir_name"
-'''
-'''
+```
+```
 ls -a -l
-'''
-'''
+```
+```
 rm .wallet.json
-'''
+```
 ```
 node . wallet new
 ```
 
 Then import the private key in  ~/dogecoin-1.14.7/bin/ with the following without quotes. "False" means that it will NOT rescan the blockchain for previous transactions for this address.
 
-'''
+```
 ./dogecoin-cli importprivkey "your_private_key" "new_dir_name" false 
-'''
+```
 
 After this fund address again. 
 
-'''
+```
 node . wallet sync
-'''
+```
 Good to go!
 
 
