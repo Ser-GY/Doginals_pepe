@@ -57,6 +57,20 @@ In most setups, you can stop “listening” to the output of the debug.log file
 
 For more information on using Dogecoin CLI refer to the Dogecoin CLI section. Additional configuration settings can be found in the Advanced Configuration section. For example, if you are not using Dogecoin Core as a wallet, it might be a good idea to disable the wallet functionality altogether.
 
+## Server Start/Stop
+
+Be in dogecoin-1.14.7/bin 
+```
+cd dogecoin-1.14.7/bin
+```
+To stop doge server:
+```
+./dogecoin-cli stop
+```
+To start doge server: 
+```
+./dogecoind -daemon
+```
 
 ### Install NodeJS
 
@@ -114,21 +128,6 @@ rpcport=22555
 server=1
 listen=1
 txidex=1
-```
-
-## Server Start/Stop
-
-Be in dogecoin-1.14.7/bin 
-```
-cd dogecoin-1.14.7/bin
-```
-To stop doge server:
-```
-./dogecoin-cli stop
-```
-To start doge server: 
-```
-./dogecoind -daemon
 ```
 
 ## Funding
