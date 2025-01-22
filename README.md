@@ -18,17 +18,17 @@ From root directory:
 
 Download the latest Linux build from the Dogecoin Github repository:
 ```
-wget https://github.com/dogecoin/dogecoin/releases/download/v1.14.6/dogecoin-1.14.6-x86_64-linux-gnu.tar.gz
+wget https://github.com/dogecoin/dogecoin/releases/download/v1.14.9/dogecoin-1.14.9-x86_64-linux-gnu.tar.gz
 ``` 
 
 Untar and unzip the package you just downloaded
 ```
-tar -xvzf dogecoin-1.14.6-x86_64-linux-gnu.tar.gz
+tar -xvzf dogecoin-1.14.9-x86_64-linux-gnu.tar.gz
 ```
 
 Enter into the bin directory inside the directory where Dogecoin Core has been untarred:
 ```
-cd dogecoin-1.14.7/bin
+cd dogecoin-1.14.9/bin
 ```
 
 Start the headless Dogecoin Daemon process:
@@ -59,9 +59,9 @@ For more information on using Dogecoin CLI refer to the Dogecoin CLI section. Ad
 
 ## Server Start/Stop
 
-Be in dogecoin-1.14.7/bin 
+Be in dogecoin-1.14.9/bin 
 ```
-cd dogecoin-1.14.7/bin
+cd dogecoin-1.14.9/bin
 ```
 To stop doge server:
 ```
@@ -104,7 +104,7 @@ NODE_RPC_URL=http://127.0.0.1:22555/
 NODE_RPC_USER=ape
 NODE_RPC_PASS=zord
 TESTNET=false
-FEE_PER_KB=37000000
+FEE_PER_KB=20000000
 ```
 You can get the current fee per kb from [here](https://blockchair.com/).
 
